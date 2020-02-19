@@ -1,0 +1,51 @@
+//Create loop that prompts user for a valid input
+//Create left side of pyramid by taking nth column and jth row and compare it to the input b - 1
+//Create gap
+//Create right side of pyramid (Having some trouble on this)
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+{
+    int b;
+
+//Prompt user for levels
+    do
+    {
+        b = get_int ("How many levels:\n");
+    }
+    while (b < 0 || b > 9);
+
+//Print for Left Side of Pyramid
+
+    for (int n = 0; n < b; n++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+
+            if (n + j < b - 1)
+                    printf(" ");
+            else
+                    printf("#");
+     }
+// Print Gap
+
+     for(int i = 2; i < b; i++)
+     {
+    
+         printf(" ");
+     }
+
+// Print Right Side of Pyramid
+
+    for(int x = 0; x < b ; x++)
+    {
+        if (x - 1 < b)
+            printf("@");
+            else 
+            printf("!");   
+    }
+     printf("\n");
+    }
+}
