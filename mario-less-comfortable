@@ -1,0 +1,37 @@
+// First Need to Create a Loop that prompts the user for a valid input 
+using a do while loop
+// Secondly draw hashes according to the level that was inputed by the user
+// Make a for loop that for every level b, the column n and the j row, are
+subtracted by b - 1
+// Check and Test
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+{
+    int b;
+
+//Prompt user for levels
+    do
+    {
+        b = get_int ("How many levels:\n");
+    }
+    while (b < 0 || b > 9);
+
+//Print hashes
+
+    for (int n = 0; n < b; n++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+//Add the nth column and jth row and subtract by the level minus one
+            if (n + j < b - 1)
+                    printf(" ");
+            else
+                    printf("#");
+     }
+     printf("\n");
+    }
+}
+
